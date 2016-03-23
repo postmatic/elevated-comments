@@ -42,7 +42,7 @@ class CommentIQ_Plugin
      *
      * @var string
      */
-    private $plugin_dir;
+    private $plugin_path;
 
     /**
      * Constructor.
@@ -54,7 +54,7 @@ class CommentIQ_Plugin
         $this->api_client = new CommentIQ_API_Client(_wp_http_get_object());
         $this->event_manager = new CommentIQ_EventManagement_EventManager();
         $this->loaded = false;
-        $this->plugin_dir = plugin_dir_path($file);
+        $this->plugin_path = plugin_dir_path($file);
     }
 
     /**
@@ -94,7 +94,7 @@ class CommentIQ_Plugin
      */
     private function get_elevated_comment_generator()
     {
-        return new CommentIQ_Generator_ElevatedCommentGenerator($this->plugin_dir . 'assets/templates/elevated-comment.php', $this->get_supported_post_types());
+        return new CommentIQ_Generator_ElevatedCommentGenerator($this->plugin_path . 'assets/templates/elevated-comment.php', $this->get_supported_post_types());
     }
 
     /**
