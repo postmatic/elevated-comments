@@ -260,6 +260,12 @@ class CommentIQ_Subscriber_CommentIQAPISubscriber implements CommentIQ_EventMana
      */
     private function update_elevated_comment(WP_Post $post)
     {
+        $comment_count = wp_count_comments($post->ID);
+
+        if (!is_object($comment_count) || $comment_count->approved < 3) {
+            return;
+        }
+
         $elevated_comment = array_reduce(get_comments(array('post_id' => $post->ID)), array($this, 'compare_comments'));
 
         if ($elevated_comment instanceof WP_Comment) {
