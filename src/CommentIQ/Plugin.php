@@ -45,6 +45,13 @@ class CommentIQ_Plugin
     private $plugin_path;
 
     /**
+     * URL to the directory where WordPress installed the plugin.
+     *
+     * @var string
+     */
+    private $plugin_url;
+
+    /**
      * Constructor.
      *
      * @param string $file
@@ -55,6 +62,7 @@ class CommentIQ_Plugin
         $this->event_manager = new CommentIQ_EventManagement_EventManager();
         $this->loaded = false;
         $this->plugin_path = plugin_dir_path($file);
+        $this->plugin_url = plugin_dir_url($file);
     }
 
     /**
@@ -117,6 +125,7 @@ class CommentIQ_Plugin
     private function get_subscribers()
     {
         return array(
+            new CommentIQ_Subscriber_AssetsSubscriber($this->plugin_url . 'assets/', $this->get_supported_post_types()),
             new CommentIQ_Subscriber_AutomatedElevatedCommentSubscriber($this->get_elevated_comment_generator(), $this->get_supported_post_types()),
             new CommentIQ_Subscriber_CommentIQAPISubscriber($this->api_client, $this->get_supported_post_types()),
         );
