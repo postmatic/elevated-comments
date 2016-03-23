@@ -9,6 +9,11 @@
  * file that was distributed with this source code.
  */
 
+/**
+ * HTML generator for elevated comments.
+ *
+ * @author Carl Alexander <contact@carlalexander.ca>
+ */
 class CommentIQ_Generator_ElevatedCommentGenerator
 {
     /**
@@ -32,6 +37,12 @@ class CommentIQ_Generator_ElevatedCommentGenerator
      */
     private $default_template_path;
 
+    /**
+     * Constructor.
+     *
+     * @param string $default_template_path
+     * @param array  $post_types
+     */
     public function __construct($default_template_path, array $post_types = array())
     {
         $this->elevated_comment_id_meta_key = 'commentiq_elevated_comment_id';
@@ -39,6 +50,13 @@ class CommentIQ_Generator_ElevatedCommentGenerator
         $this->default_template_path = $default_template_path;
     }
 
+    /**
+     * Generate the elevated comment HTML for the given post.
+     *
+     * @param WP_Post $post
+     *
+     * @return string
+     */
     public function generate(WP_Post $post)
     {
         if (!in_array($post->post_type, $this->post_types)) {

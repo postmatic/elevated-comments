@@ -39,6 +39,12 @@ class CommentIQ_Subscriber_AutomatedElevatedCommentSubscriber implements Comment
      */
     private $post_types;
 
+    /**
+     * Constructor.
+     *
+     * @param CommentIQ_Generator_ElevatedCommentGenerator $elevated_comment_generator
+     * @param array                                        $post_types
+     */
     public function __construct(CommentIQ_Generator_ElevatedCommentGenerator $elevated_comment_generator, array $post_types = array())
     {
         $this->disabled_elevated_comment_meta_key = 'commentiq_disable_elevated_comment';
