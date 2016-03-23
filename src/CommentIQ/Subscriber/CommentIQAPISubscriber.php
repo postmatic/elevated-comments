@@ -198,6 +198,10 @@ class CommentIQ_Subscriber_CommentIQAPISubscriber implements CommentIQ_EventMana
      */
     private function compare_comments($elevated_comment, WP_Comment $comment)
     {
+        if (!$this->is_valid_comment($comment)) {
+            return $elevated_comment;
+        }
+
         $comment_details = get_comment_meta($comment->comment_ID, $this->comment_details_meta_key, true);
 
         if (!is_array($comment_details)
