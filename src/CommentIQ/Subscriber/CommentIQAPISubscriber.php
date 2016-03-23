@@ -203,6 +203,7 @@ class CommentIQ_Subscriber_CommentIQAPISubscriber implements CommentIQ_EventMana
         if (!is_array($comment_details)
             || !isset($comment_details['Length'], $comment_details['ArticleRelevance'])
             || $comment_details['Length'] > 100
+            || $comment_details['ArticleRelevance'] == 0
         ) {
             return $elevated_comment;
         }
