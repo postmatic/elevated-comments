@@ -147,7 +147,7 @@ class CommentIQ_API_Client
         }
 
         $response = $this->post(self::ENDPOINT_BASE.'/updateComment', $parameters);
-        var_dump($response);
+
         unset($response['status']);
 
         return $response;
