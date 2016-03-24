@@ -1,1 +1,7 @@
-
+.postmatic-elevated {
+    border: 1px solid gray;
+    float: right;
+    width: 30%;
+    padding: 5px;
+    margin: 0 0 15px 15px;
+}
