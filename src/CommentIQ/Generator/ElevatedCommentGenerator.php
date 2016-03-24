@@ -71,7 +71,7 @@ class CommentIQ_Generator_ElevatedCommentGenerator
 
         $elevated_comment = get_comment($elevated_comment_id);
 
-        if (!$elevated_comment instanceof WP_Comment) {
+        if (!$elevated_comment instanceof WP_Comment || !$this->is_valid_comment($elevated_comment)) {
             return '';
         }
 
@@ -92,6 +92,18 @@ class CommentIQ_Generator_ElevatedCommentGenerator
         }
 
         return $template;
+    }
+
+    /**
+     * Checks if the given comment is valid.
+     *
+     * @param WP_Comment $comment
+     *
+     * @return bool
+     */
+    private function is_valid_comment(WP_Comment $comment)
+    {
+        return '1' == $comment->comment_approved && empty($comment->comment_type);
     }
 
     /**

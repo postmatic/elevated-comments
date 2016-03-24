@@ -234,7 +234,7 @@ class CommentIQ_Subscriber_CommentIQAPISubscriber implements CommentIQ_EventMana
      */
     private function is_valid_comment(WP_Comment $comment)
     {
-        return $comment->comment_approved == '1' && empty($comment->comment_type);
+        return '1' == $comment->comment_approved && empty($comment->comment_type);
     }
 
     /**
