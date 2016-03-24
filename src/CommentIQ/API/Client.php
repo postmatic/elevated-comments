@@ -56,7 +56,7 @@ class CommentIQ_API_Client
 
         if ($response instanceof WP_Error) {
             return $response;
-        } elseif (!isset($response['articleID']) || empty($response['articleID'])) {
+        } elseif (empty($response['articleID'])) {
             return new WP_Error('commentiq_error', sprintf("Comment IQ API didn't return an article ID. [Message: %s]", $response['status']));
         } elseif (!is_numeric($response['articleID'])) {
             return new WP_Error('commentiq_error', "Comment IQ API didn't return a valid article ID.");
@@ -95,7 +95,7 @@ class CommentIQ_API_Client
 
         if ($response instanceof WP_Error) {
             return $response;
-        } elseif (!isset($response['commentID']) || empty($response['commentID'])) {
+        } elseif (empty($response['commentID'])) {
             return new WP_Error('commentiq_error', sprintf("Comment IQ API didn't return an CommentID. [Message: %s]", $response['status']));
         } elseif (!is_numeric($response['commentID'])) {
             return new WP_Error('commentiq_error', "Comment IQ API didn't return a valid CommentID");
