@@ -1,7 +1,61 @@
+
 .postmatic-elevated {
-    border: 1px solid gray;
+    width: 50%;
     float: right;
-    width: 30%;
-    padding: 5px;
-    margin: 0 0 15px 15px;
+    border: 1px solid #eee;
+    margin: 0 0 10px 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    padding: 10px;
+}
+.postmatic-elevated-comment {
+  quotes: "\201C""\201D""\2018""\2019";
+  padding: 10px 20px;
+}
+
+.postmatic-elevated-comment:before {
+  content: open-quote;
+  display: inline;
+  height: 0;
+  line-height: 0;
+  left: -10px;
+  position: relative;
+  top: 20px;
+  color: #eee;
+  font-size: 3em;
+}
+.postmatic-elevated-comment::after {
+  content: close-quote;
+  display: inline;
+  height: 0;
+  line-height: 0;
+  left: 10px;
+  position: relative;
+  top: 25px;
+  color: #eee;
+  font-size: 3em;
+}
+
+.postmatic-elevated-comment p {
+    display: inline;
+    font-style: italic;
+}
+
+.postmatic-elevated-author {
+    font-size: 125%;
+}
+
+.postmatic-elevated-avatar {
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+.postmatic-elevated-avatar img {
+    float: left;
+     -webkit-border-radius: 26px;
+    -moz-border-radius: 26px;
+    border-radius: 26px;   
+    width: 48px;
+    margin-right: 15px;
 }
