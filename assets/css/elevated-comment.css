@@ -63,7 +63,7 @@
 }
 
 /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
-@media (min-width:600px) { 
+@media (max-width:600px) { 
     
 .postmatic-elevated {
     width: 100%;
