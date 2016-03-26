@@ -8,6 +8,8 @@
     -moz-border-radius: 15px;
     border-radius: 15px;
     padding: 10px;
+    background: url(../postmatic-elevated.png) center center no-repeat;
+    background-size: 90%;
 }
 .postmatic-elevated-comment {
   quotes: "\201C""\201D""\2018""\2019";
@@ -58,4 +60,14 @@
     border-radius: 26px;   
     width: 48px;
     margin-right: 15px;
+}
+
+/* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+@media (min-width:600px) { 
+    
+.postmatic-elevated {
+    width: 100%;
+    float: none;
+    margin: 20px 0;
+    
 }
