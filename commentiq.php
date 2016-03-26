@@ -1,8 +1,8 @@
 <?php
 
 /*
-Plugin Name: Comment IQ (Proof of Concept)
-Description: Proof of concept plugin for integrating the Comment IQ API.
+Plugin Name: Elevated Comments
+Description: Identify & feature your best comments.
 Author: Carl Alexander
 Author URI: https://carlalexander.ca
 License: GPL2

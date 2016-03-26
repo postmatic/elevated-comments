@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the WordPress Comment IQ plugin.
+ * This file is part of the Elevated Comments plugin.
  *
  * (c) Carl Alexander <contact@carlalexander.ca>
  *
@@ -48,7 +48,7 @@ class CommentIQ_Shortcode_ElevatedCommentShortcode implements CommentIQ_Shortcod
      */
     public static function get_name()
     {
-        return 'commentiq_elevated_comment';
+        return 'elevated-comment';
     }
 
     /**

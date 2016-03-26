@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the WordPress Comment IQ plugin.
+ * This file is part of the Elevated Comments plugin.
  *
  * (c) Carl Alexander <contact@carlalexander.ca>
  *
