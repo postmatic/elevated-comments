@@ -8,7 +8,7 @@
     -moz-border-radius: 15px;
     border-radius: 15px;
     padding: 10px;
-    background: url(../images/postmatic-elevated.png) center center no-repeat;
+    background: url(../images/postmatic-elevated.png) center 50px no-repeat;
     background-size: 90%;
 }
 .postmatic-elevated-comment {
@@ -42,6 +42,7 @@
 .postmatic-elevated-comment p {
     display: inline;
     font-style: italic;
+    font-size: 90%;
 }
 
 .postmatic-elevated-author {
