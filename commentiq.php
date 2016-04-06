@@ -2,9 +2,9 @@
 
 /*
 Plugin Name: Elevated Comments
-Description: Identify & feature your best comments.
-Author: Carl Alexander
-Author URI: https://carlalexander.ca
+Description: Analyze comments to determine which are most articulate & relevant. Place them near the top of the post.
+Author: Postmatic
+Author URI: https://gopostmatic.com
 License: GPL2
 */
 
