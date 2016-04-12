@@ -21,9 +21,9 @@
   display: inline;
   height: 0;
   line-height: 0;
-  float: right;
+  left: -10px;
   position: relative;
-  top: -15px;
+  top: 20px;
   color: #eee;
   font-size: 3em;
 }
@@ -32,9 +32,9 @@
   display: inline;
   height: 0;
   line-height: 0;
-  left: 10px;
+  float:right;
   position: relative;
-  top: 25px;
+  top: -15px;
   color: #eee;
   font-size: 3em;
 }
@@ -45,8 +45,9 @@
     font-size: 90%;
 }
 
-.postmatic-elevated-comment p:first-child {
-
+.postmatic-elevated-comment p:nth-child(2),.postmatic-elevated-comment p:nth-child(3),.postmatic-elevated-comment p:nth-child(4) {
+    display: block;
+    margin-top: 15px;
 }
 
 .postmatic-elevated-author {
@@ -54,7 +55,6 @@
 }
 
 .postmatic-elevated-avatar {
-    margin-top: 25px;
     margin-left: 25px;
 }
 
