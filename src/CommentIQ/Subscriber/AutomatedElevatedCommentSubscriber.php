@@ -87,7 +87,7 @@ class CommentIQ_Subscriber_AutomatedElevatedCommentSubscriber implements Comment
     public function insert_elevated_comment($content)
     {
         if (!is_main_query()
-            || is_feed()
+            || !is_singular($this->post_types)
             || has_shortcode($content, CommentIQ_Shortcode_ElevatedCommentShortcode::get_name())
         ) {
             return $content;
