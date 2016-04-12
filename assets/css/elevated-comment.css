@@ -21,9 +21,9 @@
   display: inline;
   height: 0;
   line-height: 0;
-  left: -10px;
+  float: right;
   position: relative;
-  top: 20px;
+  top: -15px;
   color: #eee;
   font-size: 3em;
 }
@@ -43,6 +43,10 @@
     display: inline;
     font-style: italic;
     font-size: 90%;
+}
+
+.postmatic-elevated-comment p:first-child {
+
 }
 
 .postmatic-elevated-author {
