@@ -554,3 +554,16 @@ a.button {
 }
 
     }
+    
+@media only screen and (max-width: 480px) {
+
+    #intro {
+        padding-top: 320px;
+    }
+    #credit h1 a {
+    display: block;
+    background: url(../img/logo.png) center top no-repeat;
+    background-size: 100%;
+    height: 120px;
+}
+}
