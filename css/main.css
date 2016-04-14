@@ -381,6 +381,7 @@ article {
 #demo h2 {
     font-size: 300%;
     text-align: center;
+    line-height: normal;
 }
 
 #intro {
@@ -388,7 +389,6 @@ article {
     background-size: 750px;
     padding-top: 270px;
     padding-left: 520px;
-    min-height: 470px;
 }
 
 #intro a {
@@ -492,3 +492,50 @@ a.button {
     border-top: 26px solid #3f382c;
     border-bottom: 26px solid #3f382c;
 }
+
+@media only screen and (max-width: 768px) {
+
+.wrapper {
+    width: auto;
+}
+#intro {
+    padding-left: 0;
+    text-align: center;
+    background-size: 100%;
+    padding-top: 622px;
+}
+
+#intro a {
+    display:none;
+
+}
+
+#demo h2 {
+    background: black;
+    color: #DECFAB;
+    margin: 6% -40px;
+    padding: 4%;
+}
+
+}
+
+@media only screen and (max-width: 600px) {
+#intro {
+    padding-top: 500px;
+}
+
+#post {
+    float: none;
+    width: auto;
+    margin: auto;
+}
+
+a.button {
+    width: 85%;
+    display: block;
+    text-align: center;
+    padding: 25px;
+    
+}
+
+    }
