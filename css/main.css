@@ -378,6 +378,10 @@ article {
     font-family: 'EB Garamond', serif;
 }
 
+.main-container h4 {
+    margin-bottom: 5px;
+}
+
 #demo h2 {
     font-size: 300%;
     text-align: center;
@@ -490,9 +494,20 @@ a.button {
 
 .main-container {
     border-top: 26px solid #3f382c;
-    border-bottom: 26px solid #3f382c;
 }
-
+.footer-container {
+    border: none;
+    background: #3f382c;
+    text-align: center;
+    font-size: 85%;
+    color:#A08F72;
+}
+.footer-container p {
+    text-align: center;
+}
+.footer-container a {
+    color: white;
+}
 @media only screen and (max-width: 768px) {
 
 .wrapper {
