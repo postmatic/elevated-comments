@@ -412,32 +412,17 @@ article {
     width: 55%;
     float: right;
     background:  #e1ca9a;
-    opacity: 0.7;
-    padding: 0 2%;
+    opacity: 0.9;
+    padding: 0 1%;
     margin-left: 4%;
     border: 4px double #d5bc8b;
 
     font-size: 12px;
     }
 
-#post p {
-    text-align: justify;
-    line-height: 150%;
-}
-
-#post blockquote {
-    float: right;
-    width: 45%;
-    border: 1px solid #4b4436;
-    padding: 2%;
-    color: black;
-    background: #4b4436;
-    line-height: normal;
-    margin-bottom: 5px;
-}
-
-#post blockquote p {
-    line-height: normal
+#post img {
+    width: 100%;
+    height: auto;
 }
 
 #smart {
