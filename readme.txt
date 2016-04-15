@@ -14,13 +14,17 @@ Comments can be the best part of a post. So why are they always buried?
 
 Elevated comments uses language analysis and machine learning to identify the most relevant and thoughtful comment on each of your posts. The comment is then automatically inserted near the top of the post as a simple sidebar pull quote. 
 
+= Learn more on our site =
+Find out more about how Elevated Comments work at [http://elevated.gopostmatic.com](http://elevated.gopostmatic.com).
+
 == Installation ==
 Elevated comments is quite simple. Once activated, it will run automatically. It does not affect your old posts, you will only notice it our new posts and comments moving forward.
 
 After a new post receives more than three comments the best will automatically be chosen and displayed at about 1/3 of the way through the post.
 
-** An important consideration **
-The contents of your comments Will be sent offsite for evaluation. Please be sure you are adhering to your local privacy laws.
+= An important consideration =
+
+The contents of your comments will be sent offsite for evaluation. Elevated Comments utilizes the [Comment-IQ API](comment-iq.com) for rating both your posts and comments. Please be sure you are adhering to your local privacy laws.
 
 
 There are two options available, each can be found on the edit > post screen.
