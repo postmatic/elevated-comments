@@ -408,6 +408,13 @@ article {
     display: none;
 }
 
+#notable {
+    width: 55%;
+    float: right;
+    padding: 0 1%;
+    margin-left: 4%;
+}
+
 #post {
     width: 55%;
     float: right;
@@ -416,7 +423,6 @@ article {
     padding: 0 1%;
     margin-left: 4%;
     border: 4px double #d5bc8b;
-
     font-size: 12px;
     }
 
@@ -441,7 +447,8 @@ article {
 #credit{
     clear: both;
     padding-bottom: 1%;
-
+    padding-top: 4%;
+    text-align: center;
 }
 
 #credit h1 {
@@ -458,7 +465,7 @@ article {
 }
 
 #download {
-    margin-top: 4%;
+    margin-top: 7%;
 }
 
 a.button {
