@@ -21,7 +21,7 @@ class CommentIQ_API_Client
      *
      * @var string
      */
-    const ENDPOINT_BASE = 'http://api.comment-iq.com/commentIQ/v1';
+    const ENDPOINT_BASE = 'http://iq.gopostmatic.com/commentIQ/v1';
 
     /**
      * The WordPress HTTP transport.
