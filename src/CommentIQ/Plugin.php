@@ -126,6 +126,7 @@ class CommentIQ_Plugin
     {
         return array(
             new CommentIQ_Subscriber_AssetsSubscriber($this->plugin_url . 'assets/', $this->get_supported_post_types()),
+            new CommentIQ_Subscriber_PostmaticAssetsSubscriber($this->plugin_path . 'assets/' ),
             new CommentIQ_Subscriber_AutomatedElevatedCommentSubscriber($this->get_elevated_comment_generator(), $this->get_supported_post_types()),
             new CommentIQ_Subscriber_CommentIQAPISubscriber($this->api_client, $this->get_supported_post_types()),
         );
