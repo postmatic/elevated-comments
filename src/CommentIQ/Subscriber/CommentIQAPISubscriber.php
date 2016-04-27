@@ -82,7 +82,7 @@ class CommentIQ_Subscriber_CommentIQAPISubscriber implements CommentIQ_EventMana
     public static function get_subscribed_events()
     {
         return array(
-            'comment_post' => 'on_comment_new',
+            'wp_insert_comment' => 'on_comment_new',
             'edit_comment' => 'on_comment_edit',
             'save_post' => array('on_post_save', 10, 2),
         );
