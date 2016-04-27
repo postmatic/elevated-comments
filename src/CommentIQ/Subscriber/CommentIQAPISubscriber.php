@@ -143,6 +143,11 @@ class CommentIQ_Subscriber_CommentIQAPISubscriber implements CommentIQ_EventMana
 
         $article_id = get_post_meta($post->ID, $this->article_id_meta_key, true);
 
+        if ( false === $article_id || empty( $article_id ) ) {
+	        $this->on_post_save( $post->ID, $post );
+	        $article_id = get_post_meta($post->ID, $this->article_id_meta_key, true);
+        }
+
         if (!is_numeric($article_id)) {
             return;
         }
