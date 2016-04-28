@@ -95,7 +95,7 @@ class CommentIQ_Subscriber_CommentIQAPISubscriber implements CommentIQ_EventMana
      * @return bool  true if successful, false if not
      */
     public function retry_comment( $comment_id ) {
-        
+
         // Try to add new comment
         $result = $this->on_comment_new( $comment_id );
         return $result;
@@ -124,7 +124,6 @@ class CommentIQ_Subscriber_CommentIQAPISubscriber implements CommentIQ_EventMana
                 return;
             }
             $commentiq_comment_id = get_comment_meta( $comment_id, $this->comment_id_meta_key, true );
-
             if ( false == $commentiq_comment_id || empty( $commentiq_comment_id ) ) {
                 return;
             }
@@ -274,7 +273,6 @@ class CommentIQ_Subscriber_CommentIQAPISubscriber implements CommentIQ_EventMana
      *
      * @param  int   $comment_id
      * @param  array $comment_details
-     * @return int   $commentID
      */
     private function update_comment_details($comment_id, array $comment_details)
     {
@@ -284,7 +282,6 @@ class CommentIQ_Subscriber_CommentIQAPISubscriber implements CommentIQ_EventMana
         }
 
         update_comment_meta($comment_id, $this->comment_details_meta_key, $comment_details);
-        return $comment_details['commentID'];
     }
 
     /**
