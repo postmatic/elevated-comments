@@ -9,7 +9,6 @@ Comments can be the best part of a post. So why are they always buried?
 
 Elevated comments uses language analysis and machine learning to identify the most relevant and thoughtful comment on each of your posts. The comment is then automatically inserted near the top of the post as a simple sidebar pull quote. 
 
-= Learn more on our site =
 Find out more about how Elevated Comments work at <a href="http://elevated.gopostmatic.com">http://elevated.gopostmatic.com</a>.
 
 ## Installation
