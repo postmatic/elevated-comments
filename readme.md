@@ -17,41 +17,41 @@ Elevated comments is quite simple. Once activated, it will run automatically. It
 
 After a new post receives more than three comments the best will automatically be chosen and displayed at about 1/3 of the way through the post.
 
-### An Important Consideration
+#### An Important Consideration
 
 The contents of your comments will be sent offsite for evaluation. Elevated Comments utilizes the [Comment-IQ API](comment-iq.com) for rating both your posts and comments. Please be sure you are adhering to your local privacy laws.
 
 
 There are two options available, each can be found on the edit > post screen.
 
-### Manually place the comment
+#### Manually place the comment
 
 Comments can be manually placed on posts by using the following shortcode:
 `[elevated-comment]`
 
-### Disable comment elevation per post
+#### Disable comment elevation per post
 
 If you would like to disable comment elevation on a post you can do so using a checkbox on the Discussion Settings metabox.
 
 ## Frequently Asked Questions
 
-### Will elevated comments show up on my old posts?
+#### Will elevated comments show up on my old posts?
 
 No. The plugin does not retroactively rate your old posts or comments. It will only affect new content moving forward.
 
-### Can I change the formatting or markup of the elevated comment?
+#### Can I change the formatting or markup of the elevated comment?
 
 Yes. There are a number of classes in place for modifying the styling. You can also override the default template by copying it to your theme directory.
 
-### Can I manually choose which comment gets elevated?
+#### Can I manually choose which comment gets elevated?
 
 Not at this time.
 
-### How is comment relevance determined? Can my users vote?
+#### How is comment relevance determined? Can my users vote?
 
 Computers are so much better at this than humans. Trust us.
 
-### Can I have more than one elevated comment proposed?
+#### Can I have more than one elevated comment proposed?
 
 Not yet. There is only one winner. The best comment.
 
