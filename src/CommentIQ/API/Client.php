@@ -21,7 +21,7 @@ class CommentIQ_API_Client
      *
      * @var string
      */
-    const ENDPOINT_BASE = 'http://iq.gopostmatic.com/commentIQ/v1';
+    private $endpoint_base = 'http://iq.gopostmatic.com/commentIQ/v1';
 
     /**
      * The WordPress HTTP transport.
@@ -38,6 +38,7 @@ class CommentIQ_API_Client
     public function __construct(WP_Http $http_transport)
     {
         $this->http_transport = $http_transport;
+        $this->endpoint_base  = apply_filters( 'elevated_api_url', $this->endpoint_base );
     }
 
     /**
@@ -50,7 +51,7 @@ class CommentIQ_API_Client
      */
     public function add_article($article_text)
     {
-        $response = $this->post(self::ENDPOINT_BASE.'/addArticle', array(
+        $response = $this->post( $this->endpoint_base .'/addArticle', array(
             'article_text' => $article_text,
         ));
 
@@ -91,7 +92,7 @@ class CommentIQ_API_Client
             $parameters['username'] = $username;
         }
 
-        $response = $this->post(self::ENDPOINT_BASE.'/addComment', $parameters);
+        $response = $this->post( $this->endpoint_base.'/addComment', $parameters);
 
         if ($response instanceof WP_Error) {
             return $response;
@@ -114,10 +115,10 @@ class CommentIQ_API_Client
      */
     public function update_article($article_id, $article_text)
     {
-        $this->post(self::ENDPOINT_BASE.'/updateArticle', array(
+        $this->post( $this->endpoint_base .'/updateArticle', array(
             'articleID' => $article_id,
             'article_text' => $article_text
-        ));
+        ) );
     }
 
     /**
@@ -146,7 +147,7 @@ class CommentIQ_API_Client
             $parameters['username'] = $username;
         }
 
-        $response = $this->post(self::ENDPOINT_BASE.'/updateComment', $parameters);
+        $response = $this->post( $this->endpoint_base .'/updateComment', $parameters );
 
         unset($response['status']);
 
