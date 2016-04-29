@@ -1,9 +1,9 @@
 === Elevated Comments ===
-Contributors: vernal, carlalexander
+Contributors: vernal, carlalexander, ronalfy
 Tags: comments, engagement, long-tail
 Donate link: http://gopostmatic.com
 Requires at least: 4.4
-Tested up to: 4.5
+Tested up to: 4.5.1
 Stable tag: 1.1.0
 License: GPLv2
 
