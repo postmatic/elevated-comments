@@ -61,7 +61,6 @@ class CommentIQ_API_Client
         } elseif (!is_numeric($response['articleID'])) {
             return new WP_Error('commentiq_error', "Comment IQ API didn't return a valid article ID.");
         }
-
         return $response['articleID'];
     }
 
@@ -114,7 +113,7 @@ class CommentIQ_API_Client
      */
     public function update_article($article_id, $article_text)
     {
-        $this->post(self::ENDPOINT_BASE.'/updateArticle', array(
+        $response = $this->post(self::ENDPOINT_BASE.'/updateArticle', array(
             'articleID' => $article_id,
             'article_text' => $article_text
         ));
@@ -147,7 +146,6 @@ class CommentIQ_API_Client
         }
 
         $response = $this->post(self::ENDPOINT_BASE.'/updateComment', $parameters);
-
         unset($response['status']);
 
         return $response;
