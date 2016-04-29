@@ -4,7 +4,7 @@ Tags: comments, engagement, long-tail
 Donate link: http://gopostmatic.com
 Requires at least: 4.4
 Tested up to: 4.5
-Stable tag: trunk
+Stable tag: 1.1.0
 License: GPLv2
 
 Bring the best conversation to the top of the page with Elevated Comments.
@@ -34,7 +34,7 @@ Comments can be manually placed on posts by using the following shortcode:
 [elevated-comment]
 
 = Disable comment elevation per post =
-If you would like to disable comment elevation on a post you can do so using a checkbox on the Discussion Setttings metabox.
+If you would like to disable comment elevation on a post you can do so using a checkbox on the Discussion Settings metabox.
 
 == Frequently Asked Questions ==
 = Will elevated comments show up on my old posts? =
@@ -56,3 +56,19 @@ Not yet. There is only one winner. The best comment.
 1. The best comment from a post is automatically determined by magical robots and placed into the post content about 1/3 of the way down the page.
 2. A checkbox on the Discussion Settings metabox allows you to enable or disable elevated comments per post
 3. Or, use a shortcode to place the elevated comment manually.
+
+== Changelog ==
+
+= 1.1.0 = 
+* Released 2016-04-28
+* Switching to self-contained API for better reliability
+* Filter to create your own API endpoint
+* Add better support for nicknames/display names elevated comment
+* Bug fix: Commenting on a post will now update the post and the comment with the API
+* Bug fix: Changing comment insertion to wp_insert_comment to prevent conflicts
+* CSS fixes
+* Can now render in multiple contexts other than in the main query
+
+= 1.0.0 =
+* Released 2015-04-15
+* Initial Release
