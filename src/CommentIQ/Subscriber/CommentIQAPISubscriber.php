@@ -87,6 +87,19 @@ class CommentIQ_Subscriber_CommentIQAPISubscriber implements CommentIQ_EventMana
             'save_post' => array('on_post_save', 10, 2),
         );
     }
+    
+    /**
+     * Retries getting comment information. Assumes comment meta empty.
+     *
+     * @param  int   $comment_id
+     * @return bool  true if successful, false if not
+     */
+    public function retry_comment( $comment_id ) {
+
+        // Try to add new comment
+        $result = $this->on_comment_new( $comment_id );
+        return $result;
+    }
 
     /**
      * Updates an existing comment with the Comment IQ API.
@@ -103,8 +116,17 @@ class CommentIQ_Subscriber_CommentIQAPISubscriber implements CommentIQ_EventMana
 
         $commentiq_comment_id = get_comment_meta($comment_id, $this->comment_id_meta_key, true);
 
-        if (!is_numeric($commentiq_comment_id)) {
-            return;
+        if ( ! is_numeric( $commentiq_comment_id ) ) {
+
+            // Retry getting comment on edit
+            $retry = $this->retry_comment( $comment_id );
+            if ( false === $retry ) {
+                return;
+            }
+            $commentiq_comment_id = get_comment_meta( $comment_id, $this->comment_id_meta_key, true );
+            if ( false == $commentiq_comment_id || empty( $commentiq_comment_id ) ) {
+                return;
+            }
         }
 
         $comment_details = $this->api_client->update_comment($commentiq_comment_id, $comment->comment_content, $comment->comment_date_gmt, $comment->comment_author);
@@ -125,36 +147,44 @@ class CommentIQ_Subscriber_CommentIQAPISubscriber implements CommentIQ_EventMana
     /**
      * Adds a new comment with the Comment IQ API.
      *
-     * @param int $comment_id
+     * @param int  $comment_id
+     * @param bool return true on success, false on failure
      */
     public function on_comment_new($comment_id)
     {
         $comment = get_comment($comment_id);
 
         if (!$comment instanceof WP_Comment || !$this->is_valid_comment($comment)) {
-            return;
+            return false;
         }
 
         $post = get_post($comment->comment_post_ID);
 
         if (!$post instanceof WP_Post) {
-            return;
+            return false;
         }
 
         $article_id = get_post_meta($post->ID, $this->article_id_meta_key, true);
 
+        if ( false === $article_id || empty( $article_id ) ) {
+	        $this->on_post_save( $post->ID, $post );
+	        $article_id = get_post_meta($post->ID, $this->article_id_meta_key, true);
+        }
+
         if (!is_numeric($article_id)) {
-            return;
+            return false;
         }
 
         $comment_details = $this->api_client->add_comment($article_id, $comment->comment_content, $comment->comment_date_gmt, $comment->comment_author);
 
         if ($comment_details instanceof WP_Error) {
-            return;
+            return false;
         }
 
-        $this->update_comment_details($comment_id, $comment_details);
-        $this->update_elevated_comment($post);
+        $this->update_comment_details( $comment_id, $comment_details );
+        $this->update_elevated_comment( $post );
+
+        return true;
     }
 
     /**
@@ -241,8 +271,8 @@ class CommentIQ_Subscriber_CommentIQAPISubscriber implements CommentIQ_EventMana
     /**
      * Update the comment details from the Comment IQ API for the given comment ID.
      *
-     * @param int   $comment_id
-     * @param array $comment_details
+     * @param  int   $comment_id
+     * @param  array $comment_details
      */
     private function update_comment_details($comment_id, array $comment_details)
     {
