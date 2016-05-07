@@ -91,6 +91,10 @@ class CommentIQ_Plugin
         foreach ($this->get_subscribers() as $subscriber) {
             $this->event_manager->add_subscriber($subscriber);
         }
+        
+        // Settings Page
+        $settings_page = new CommentIQ_Admin_Settings();
+        $settings_page->run();
 
         $this->loaded = true;
     }
