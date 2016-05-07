@@ -11,6 +11,8 @@ Text Domain: elevated-comments
 Domain Path: /languages
 */
 
+define( 'ELEVATED_COMMENTS_DIR_NAME', plugin_basename(__FILE__) );
+
 function elevated_comments_text_domain() {
     load_plugin_textdomain( 'elevated-comments', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }

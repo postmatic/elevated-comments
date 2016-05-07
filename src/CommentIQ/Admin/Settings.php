@@ -18,6 +18,9 @@ class CommentIQ_Admin_Settings {
         //Admin Settings
 		add_action( 'admin_menu', array( $this, 'add_admin_menu' ) );
 		add_action( 'admin_init', array( $this, 'init_admin_settings' ) );
+		
+		//Plugin settings
+		add_filter( 'plugin_action_links_' . ELEVATED_COMMENTS_DIR_NAME , array( $this, 'add_settings_link' ) );
     }
     
     /**
@@ -57,6 +60,25 @@ class CommentIQ_Admin_Settings {
 		$enable_content = isset( $settings[ 'show_in_content' ] ) ? (bool)$settings[ 'show_in_content' ] : true;
 		echo '<input name="elevated-comments[show_in_content]" value="off" type="hidden" />';
 		printf( '<input id="elevated-show-content" type="checkbox" name="elevated-comments[show_in_content]" value="on" %s />&nbsp;<label for="elevated-show-content">%s</label>', checked( true, $enable_content, false ), __( 'Show Elevated Comments in Content', 'elevated-comments' ) );
+	}
+	
+	/**
+	 * Add a settings link to the plugin's options.
+	 *
+	 * Add a settings link on the WordPress plugin's page.
+	 *
+	 * @since 1.2.0
+	 * @access public
+	 *
+	 * @see init
+	 *
+	 * @param array $links Array of plugin options
+	 * @return array $links Array of plugin options
+	 */
+	public function add_settings_link( $links ) { 
+		$settings_link = sprintf( '<a href="%s">%s</a>', esc_url( admin_url( 'edit-comments.php?page=elevated-comments' ) ), _x( 'Settings', 'Plugin settings link on the plugins page', 'elevated-comments' ) ); 
+			array_unshift($links, $settings_link); 
+			return $links; 
 	}
 	
 	/**
