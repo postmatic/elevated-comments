@@ -57,7 +57,9 @@ Not yet. There is only one winner. The best comment.
 
 ## Hooks (Actions and Filters )
 
-There is only one current filter, which is `elevated_api_endpoint`.
+There are several filters.
+
+### elevated_api_endpoint
 
 ```php
 /**
@@ -80,3 +82,29 @@ Example code would be:
 add_filter( 'elevated_api_endpoint', function() {
     return 'http://domain.com/commentIQ/v1';
 } );
+```
+
+### elevated_show_in_content
+
+```php
+/**
+ * Filter: elevated_show_in_content
+ *
+ * Whether to show the elevated comment.
+ *
+ * @since 1.2.0
+ *
+ * @param bool  $comment_show_in_content true to show in content, false if not.
+ * @param int   Comment ID
+ * @param int   Comment Post ID
+ */
+$comment_show_in_content = (bool)apply_filters( 'elevated_show_in_content', $comment_show_in_content, $comment->comment_ID, $comment->comment_post_ID );
+```
+
+Example code would be: 
+
+```php
+add_filter( 'elevated_show_in_content', function( $show, $comment_id, $post_id ) {
+    //return true or false
+    return false;
+}, 10, 3 );

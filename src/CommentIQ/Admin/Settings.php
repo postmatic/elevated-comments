@@ -60,6 +60,24 @@ class CommentIQ_Admin_Settings {
 	}
 	
 	/**
+	 * Return an option key
+	 *
+	 * Return an option key
+	 *
+	 * @since 1.2.0
+	 * @access public
+	 *
+	 * @return mixed option, empty string on failure
+	 */
+	public static function get_plugin_option( $key ) {
+    	$settings = get_option( 'elevated-comments' );
+    	if ( isset( $settings[ $key ] ) ) {
+        	return $settings[ $key ];
+    	}
+    	return false;
+	}
+	
+	/**
 	 * Initialize and return plugin options.
 	 *
 	 * Return an array of plugin options.
