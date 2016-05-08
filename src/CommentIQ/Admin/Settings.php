@@ -35,7 +35,7 @@ class CommentIQ_Admin_Settings {
 	 *
 	 */	
 	public function add_admin_menu() {
-		add_comments_page( _x( 'Elevated Comments', 'Plugin Name - Settings Page Title', 'elevated-comments' ), _x( 'Elevated Comments', 'Plugin Name - Menu Item', 'elevated-comments' ), 'manage_options', 'elevated-comments', array( $this, 'options_page' ) );
+		add_options_page( _x( 'Elevated Comments', 'Plugin Name - Settings Page Title', 'elevated-comments' ), _x( 'Elevated Comments', 'Plugin Name - Menu Item', 'elevated-comments' ), 'manage_options', 'elevated-comments', array( $this, 'options_page' ) );
 	}
 	
 	/**
@@ -76,7 +76,7 @@ class CommentIQ_Admin_Settings {
 	 * @return array $links Array of plugin options
 	 */
 	public function add_settings_link( $links ) { 
-		$settings_link = sprintf( '<a href="%s">%s</a>', esc_url( admin_url( 'edit-comments.php?page=elevated-comments' ) ), _x( 'Settings', 'Plugin settings link on the plugins page', 'elevated-comments' ) ); 
+		$settings_link = sprintf( '<a href="%s">%s</a>', esc_url( admin_url( 'options-general.php?page=elevated-comments' ) ), _x( 'Settings', 'Plugin settings link on the plugins page', 'elevated-comments' ) ); 
 			array_unshift($links, $settings_link); 
 			return $links; 
 	}
@@ -162,7 +162,6 @@ class CommentIQ_Admin_Settings {
 	public function options_page() {
 	?>
 	    <div class="wrap">
-    	    <?php settings_errors( 'elevated-comments' ); ?>
 	        <h2><?php echo esc_html( _x( 'Elevated Comments', 'Plugin Name - Settings Page Title', 'elevated-comments' ) ); ?></h2>
 	        <form action="<?php echo esc_url( admin_url( 'options.php' ) ); ?>" method="POST">
 	            <?php settings_fields( 'elevated-comments' ); ?>
