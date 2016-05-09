@@ -92,7 +92,7 @@ add_filter( 'elevated_api_endpoint', function() {
  *
  * Whether to show the elevated comment.
  *
- * @since 1.2.0
+ * @since 1.1.1
  *
  * @param bool  $comment_show_in_content true to show in content, false if not.
  * @param int   Comment ID

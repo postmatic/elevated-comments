@@ -4,7 +4,7 @@
  *
  * Initializes the settings page for Elevated Comments
  *
- * @since 1.2.0
+ * @since 1.1.1
  *
  * @package WordPress
  */
@@ -28,7 +28,7 @@ class CommentIQ_Admin_Settings {
 	 *
 	 * Create plugin options page and callback
 	 *
-	 * @since 1.2.0
+	 * @since 1.1.1
 	 * @access public
 	 *
 	 * @see run
@@ -43,7 +43,7 @@ class CommentIQ_Admin_Settings {
 	 *
 	 * Output checkbox for displaying Facebook sharing.
 	 *
-	 * @since 1.2.0
+	 * @since 1.1.1
 	 * @access public
 	 *
 	 * @see init_admin_settings
@@ -67,7 +67,7 @@ class CommentIQ_Admin_Settings {
 	 *
 	 * Add a settings link on the WordPress plugin's page.
 	 *
-	 * @since 1.2.0
+	 * @since 1.1.1
 	 * @access public
 	 *
 	 * @see init
@@ -86,7 +86,7 @@ class CommentIQ_Admin_Settings {
 	 *
 	 * Return an option key
 	 *
-	 * @since 1.2.0
+	 * @since 1.1.1
 	 * @access public
 	 *
 	 * @return mixed option, empty string on failure
@@ -104,7 +104,7 @@ class CommentIQ_Admin_Settings {
 	 *
 	 * Return an array of plugin options.
 	 *
-	 * @since 1.2.0
+	 * @since 1.1.1
 	 * @access public
 	 *
 	 * @see run
@@ -134,7 +134,7 @@ class CommentIQ_Admin_Settings {
 	 *
 	 * Initialize page settings, fields, and sections and their callbacks
 	 *
-	 * @since 1.2.0
+	 * @since 1.1.1
 	 * @access public
 	 *
 	 * @see init
@@ -153,7 +153,7 @@ class CommentIQ_Admin_Settings {
 	 *
 	 * Output option page HTML and fields/sections.
 	 *
-	 * @since 1.2.0
+	 * @since 1.1.1
 	 * @access public
 	 *
 	 * @see add_admin_menu
@@ -177,7 +177,7 @@ class CommentIQ_Admin_Settings {
 	 *
 	 * Sanitize and prepare error messages when saving options.
 	 *
-	 * @since 1.2.0
+	 * @since 1.1.1
 	 * @access public
 	 *
 	 * @see init_admin_settings
@@ -220,7 +220,7 @@ class CommentIQ_Admin_Settings {
 	 *
 	 * Output any HTML required to go into a settings section
 	 *
-	 * @since 1.2.0
+	 * @since 1.1.1
 	 * @access public
 	 *
 	 * @see init_admin_settings
