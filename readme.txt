@@ -3,8 +3,8 @@ Contributors: vernal, carlalexander, ronalfy
 Tags: comments, engagement, long-tail
 Donate link: http://gopostmatic.com
 Requires at least: 4.4
-Tested up to: 4.5.1
-Stable tag: 1.1.0
+Tested up to: 4.5.2
+Stable tag: 1.1.1
 License: GPLv2
 
 Bring the best conversation to the top of the page with Elevated Comments.
