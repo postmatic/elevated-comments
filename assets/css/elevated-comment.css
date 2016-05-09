@@ -64,6 +64,7 @@
     -moz-border-radius: 26px;
     border-radius: 26px;   
     width: 48px;
+    height: auto;
     margin-right: 15px;
 }
 
