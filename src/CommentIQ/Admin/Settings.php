@@ -59,7 +59,7 @@ class CommentIQ_Admin_Settings {
 		$settings = $this->get_plugin_options();
 		$enable_content = isset( $settings[ 'show_in_content' ] ) ? (bool)$settings[ 'show_in_content' ] : true;
 		echo '<input name="elevated-comments[show_in_content]" value="off" type="hidden" />';
-		printf( '<input id="elevated-show-content" type="checkbox" name="elevated-comments[show_in_content]" value="on" %s />&nbsp;<label for="elevated-show-content">%s</label>', checked( true, $enable_content, false ), __( 'Show Elevated Comments in Content', 'elevated-comments' ) );
+		printf( '<input id="elevated-show-content" type="checkbox" name="elevated-comments[show_in_content]" value="on" %s />&nbsp;<label for="elevated-show-content">%s</label>', checked( true, $enable_content, false ), __( 'Automatically insert the best comment near the top of each post.', 'elevated-comments' ) );
 	}
 	
 	/**
@@ -143,9 +143,9 @@ class CommentIQ_Admin_Settings {
 	public function init_admin_settings() {
 		register_setting( 'elevated-comments', 'elevated-comments', array( $this, 'sanitization' ) );
 		
-		add_settings_section( 'elevated-content-show', _x( 'Show in Content', 'plugin settings heading' , 'elevated-comments' ), array( $this, 'settings_section' ), 'elevated-comments' );
+		add_settings_section( 'elevated-content-show', _x( 'Options ', 'plugin settings heading' , 'elevated-comments' ), array( $this, 'settings_section' ), 'elevated-comments' );
 		
-		add_settings_field( 'elevated-comments-content-enable', __( 'Add to Content', 'elevated-comments' ), array( $this, 'add_settings_field_content_enable' ), 'elevated-comments', 'elevated-content-show', array( 'desc' => __( 'Would you like to Elevated Comments to the main content areas?', 'elevated-comments' ) ) );
+		add_settings_field( 'elevated-comments-content-enable', __( 'Display', 'elevated-comments' ), array( $this, 'add_settings_field_content_enable' ), 'elevated-comments', 'elevated-content-show', array( 'desc' => __( 'Would you like to automatically add Elevated Comments to the main content areas?', 'elevated-comments' ) ) );
 	}
 	
 	/**
@@ -162,7 +162,7 @@ class CommentIQ_Admin_Settings {
 	public function options_page() {
 	?>
 	    <div class="wrap">
-	        <h2><?php echo esc_html( _x( 'Elevated Comments', 'Plugin Name - Settings Page Title', 'elevated-comments' ) ); ?></h2>
+	        <h2><?php echo esc_html( _x( 'Elevated Comments - by Postmatic', 'Plugin Name - Settings Page Title', 'elevated-comments' ) ); ?></h2>
 	        <form action="<?php echo esc_url( admin_url( 'options.php' ) ); ?>" method="POST">
 	            <?php settings_fields( 'elevated-comments' ); ?>
 	            <?php do_settings_sections( 'elevated-comments' ); ?>
