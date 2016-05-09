@@ -61,6 +61,6 @@ class CommentIQ_Subscriber_AssetsSubscriber implements CommentIQ_EventManagement
             return;
         }
 
-        wp_enqueue_style('elevated-comment', $this->assets_url . 'css/elevated-comment.css');
+        wp_enqueue_style('elevated-comment', $this->assets_url . 'css/elevated-comment.css', array(), '20160509', 'all' );
     }
 }
