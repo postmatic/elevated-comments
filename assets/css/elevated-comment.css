@@ -76,3 +76,10 @@
     margin: 20px 0;
     
 }
+
+/*styles for postmatic*/
+
+.postmatic-content .postmatic-elevated {
+    font-size: 12px;
+    line-height: normal;
+}

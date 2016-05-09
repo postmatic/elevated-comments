@@ -119,6 +119,25 @@ class CommentIQ_Generator_ElevatedCommentGenerator
      */
     private function render_elevated_comment(WP_Comment $comment)
     {
+        $comment_show_in_content = (bool)CommentIQ_Admin_Settings::get_plugin_option( 'show_in_content' );
+        
+        /**
+		 * Filter: elevated_show_in_content
+		 *
+		 * Whether to show the elevated comment.
+		 *
+		 * @since 1.2.0
+         *
+		 * @param bool  $comment_show_in_content true to show in content, false if not.
+		 * @param int   Comment ID
+		 * @param int   Comment Post ID
+		 */
+        $comment_show_in_content = (bool)apply_filters( 'elevated_show_in_content', $comment_show_in_content, $comment->comment_ID, $comment->comment_post_ID );
+        
+        if ( false === $comment_show_in_content ) {
+            return;
+        }
+                
         ob_start();
 
         include $this->get_template();
