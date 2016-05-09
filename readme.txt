@@ -27,14 +27,17 @@ After a new post receives more than three comments the best will automatically b
 The contents of your comments will be sent offsite for evaluation. Elevated Comments utilizes the [Comment-IQ API](comment-iq.com) for rating both your posts and comments. Please be sure you are adhering to your local privacy laws.
 
 
-There are two options available, each can be found on the edit > post screen.
+There are a few options available:
+
+= Enable or disable elevated comments =
+Visit Settings > Elevated Comments in order to set the default behaviour to insert elevated comments automatically or not.
 
 = Manually place the comment =
 Comments can be manually placed on posts by using the following shortcode:
 [elevated-comment]
 
 = Disable comment elevation per post =
-If you would like to disable comment elevation on a post you can do so using a checkbox on the Discussion Settings metabox.
+If you would like to disable comment elevation on a post you can do so using a checkbox on the Discussion Settings metabox on the Edit Post screen.
 
 == Frequently Asked Questions ==
 = Will elevated comments show up on my old posts? =
@@ -58,6 +61,11 @@ Not yet. There is only one winner. The best comment.
 3. Or, use a shortcode to place the elevated comment manually.
 
 == Changelog ==
+
+= 1.1.1 = 
+* Released 2016-05-09
+* New settings screen with universal option for enabling/disableing automatic elevation
+* Better styling of elevated comments in Postmatic emailed posts
 
 = 1.1.0 = 
 * Released 2016-04-28
