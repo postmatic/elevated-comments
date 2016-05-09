@@ -76,10 +76,19 @@
     margin: 20px 0;
     
 }
-
+}
 /*styles for postmatic*/
 
 .postmatic-content .postmatic-elevated {
     font-size: 12px;
     line-height: normal;
+}
+
+@media only screen and (max-width: 480px) {
+			.postmatic-content .postmatic-elevated {
+			  width: 100% !important;
+			  display: block !important;
+              margin: 25px 0 !important;
+              float: none !important;
+			}
 }
