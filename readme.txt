@@ -62,9 +62,13 @@ Not yet. There is only one winner. The best comment.
 
 == Changelog ==
 
+= 1.1.2 =
+* Released 2016-05-10
+* Fixed bug where elevated comments aren't automatically showing.
+
 = 1.1.1 = 
 * Released 2016-05-09
-* New settings screen with universal option for enabling/disableing automatic elevation
+* New settings screen with universal option for enabling/disabling automatic elevation
 * Better styling of elevated comments in Postmatic emailed posts
 
 = 1.1.0 = 

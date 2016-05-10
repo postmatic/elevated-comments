@@ -21,6 +21,8 @@ class CommentIQ_Admin_Settings {
 		
 		//Plugin settings
 		add_filter( 'plugin_action_links_' . ELEVATED_COMMENTS_DIR_NAME , array( $this, 'add_settings_link' ) );
+		
+		$this->get_plugin_options();
     }
     
     /**
@@ -183,11 +185,7 @@ class CommentIQ_Admin_Settings {
 	 * @see init_admin_settings
 	 *
 	 * @param array $input {
-	 		@type string $js_content Content to be parsed via Javascript.  Default 'entry-content'.
-	
-	 		@type string $twitter Twitter username.  Default ''.
-	 		@type bool $show_twitter Whether to show twitter share option.  Default true.
-	 		@type bool $show_facebook Whether to show facebook share option.  Default true
+	 		@type string $show_in_content Whether to show in content or not..
 	 }
 	 * @return array Sanitized array of options
 	 */
