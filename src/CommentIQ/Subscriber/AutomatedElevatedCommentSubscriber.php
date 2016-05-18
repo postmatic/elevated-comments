@@ -106,6 +106,7 @@ class CommentIQ_Subscriber_AutomatedElevatedCommentSubscriber implements Comment
         $inserted = false;
         $content_blocks = array();
         $new_content = '';
+        $content = do_shortcode( $content ); // Prevent shortcodes from being stripped out
 
         // Modified list of HTML tags taken from `wpautop`.
         //
