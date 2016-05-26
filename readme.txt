@@ -4,7 +4,7 @@ Tags: comments, engagement, long-tail
 Donate link: http://gopostmatic.com
 Requires at least: 4.4
 Tested up to: 4.5.2
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GPLv2
 
 Bring the best conversation to the top of the page with Elevated Comments.
@@ -61,6 +61,10 @@ Not yet. There is only one winner. The best comment.
 3. Or, use a shortcode to place the elevated comment manually.
 
 == Changelog ==
+
+= 1.1.3 =
+* Released 2016-05-26
+* Bug Fix: Elevated Comments stripped out shortcodes.
 
 = 1.1.2 =
 * Released 2016-05-10
