@@ -81,15 +81,15 @@
 /*styles for postmatic*/
 
 .postmatic-content .postmatic-elevated {
-    font-size: 12px;
+    font-size: 13px;
     line-height: normal;
 }
 
 @media only screen and (max-width: 480px) {
 			.postmatic-content .postmatic-elevated {
-			  width: 100% !important;
+			  width: 90% !important;
 			  display: block !important;
-              margin: 25px 0 !important;
+              margin: 25px auto !important;
               float: none !important;
 			}
 }
