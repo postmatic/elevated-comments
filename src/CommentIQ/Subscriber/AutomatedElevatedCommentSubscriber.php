@@ -106,28 +106,28 @@ class CommentIQ_Subscriber_AutomatedElevatedCommentSubscriber implements Comment
         $inserted = false;
         $content_blocks = array();
         $new_content = '';
-        $content = do_shortcode( $content ); // Prevent shortcodes from being stripped out
-
-        // Modified list of HTML tags taken from `wpautop`.
-        //
-        // The `[a-z0-9]+?` is a catchall in case a tag isn't in the list of HTML tags.
-        $html_tags = '(table|thead|tfoot|caption|col|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre|form|map|area|blockquote|address|math|style|p|h[1-6]|hr|fieldset|legend|section|article|aside|hgroup|header|footer|nav|figure|figcaption|details|menu|summary|select|datalist|option|[a-z0-9]+?)';
-        preg_match_all('%<' . $html_tags . '[^>]*?>(.*?)<\/\1>%si', $content, $content_blocks, PREG_SET_ORDER);
-
-        foreach ($content_blocks as $content_block) {
-            $new_content_word_count = str_word_count(strip_tags($new_content));
-            $new_percentage = (str_word_count(strip_tags($content_block[2])) + $new_content_word_count) / $content_word_count;
+        
+        $content_array = explode( "\n", $content );
+        foreach( $content_array as $content_block ) {
+	        $content_block = trim( $content_block );
+	        $new_content .= $content_block;
+	        
+	        $new_content_word_count = str_word_count(strip_tags($new_content));
+            $new_percentage = (str_word_count(strip_tags($content_block)) + $new_content_word_count) / $content_word_count;
             $old_percentage = $new_content_word_count / $content_word_count;
             $percentage_threshold = 0.3;
 
-            if (!$inserted && $new_percentage > $percentage_threshold && $old_percentage < $percentage_threshold) {
-                $new_content .= $this->elevated_comment_generator->generate($post);
-                $inserted = true;
+            if (!$inserted && $new_percentage > $percentage_threshold && $old_percentage < $percentage_threshold ) {
+	            
+	            $html_tags = '(table|div|dl|ul|ol|pre|form|blockquote|address|math|p|h[1-6]|hr|fieldset|select)';
+	            $regex = '/<\/' . $html_tags . '>$/i';
+	            if( preg_match( $regex, $content_block ) ) {
+		            $new_content .= $this->elevated_comment_generator->generate($post);
+					$inserted = true;
+	            }
+                
             }
-
-            $new_content .= $content_block[0];
         }
-
         return $new_content;
     }
 
