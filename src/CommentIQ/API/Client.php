@@ -39,15 +39,15 @@ class CommentIQ_API_Client
     {
         $this->http_transport = $http_transport;
 
-        /**
-		* Filter: elevated_api_endpoint
-		*
-		* Replace the endpoint with your own.
-		*
-		* @since 1.1.0
-		*
-		* @param string URL to the endpoint.
-		*/
+		/**
+		 * Filter: elevated_api_endpoint
+		 *
+		 * Replace the endpoint with your own.
+		 *
+		 * @since 1.1.0
+		 *
+		 * @param string URL to the endpoint.
+		 */
         $this->endpoint_base  = apply_filters( 'elevated_api_endpoint', $this->endpoint_base );
     }
 

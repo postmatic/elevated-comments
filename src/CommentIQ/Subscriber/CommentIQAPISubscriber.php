@@ -298,6 +298,20 @@ class CommentIQ_Subscriber_CommentIQAPISubscriber implements CommentIQ_EventMana
         }
 
         $elevated_comment = array_reduce(get_comments(array('post_id' => $post->ID)), array($this, 'compare_comments'));
+        
+        /**
+		 * Filter: elevated_allow_post_author
+		 *
+		 * Whether to allow post author comments to be elevated.
+		 *
+		 * @since 1.1.6
+		 *
+		 * @param bool false if not, true if yes
+		 */
+        $allow_post_author  = apply_filters( 'elevated_allow_post_author', false );
+        if ( $post->post_author === $elevated_comment->user_id && ! $allow_post_author ) {
+	        return;
+        }
 
         if ($elevated_comment instanceof WP_Comment) {
             update_post_meta($post->ID, $this->elevated_comment_id_meta_key, $elevated_comment->comment_ID);
