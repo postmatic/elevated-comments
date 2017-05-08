@@ -4,7 +4,7 @@
 Plugin Name: Elevated Comments
 Description: Analyze comments to determine which are most articulate & relevant. Place them near the top of the post.
 Author: Postmatic
-Version: 1.1.5
+Version: 1.1.6
 Author URI: https://gopostmatic.com
 License: GPL2
 Text Domain: elevated-comments
