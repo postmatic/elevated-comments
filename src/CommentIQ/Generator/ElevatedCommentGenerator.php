@@ -70,8 +70,19 @@ class CommentIQ_Generator_ElevatedCommentGenerator
         }
 
         $elevated_comment = get_comment($elevated_comment_id);
+        
+		/**
+		 * Filter: elevated_allow_post_author
+		 *
+		 * Whether to allow post author comments to be elevated.
+		 *
+		 * @since 1.1.6
+		 *
+		 * @param bool false if not, true if yes
+		 */
+        $allow_post_author  = apply_filters( 'elevated_allow_post_author', false );
 
-        if (!$elevated_comment instanceof WP_Comment || !$this->is_valid_comment($elevated_comment)) {
+        if ( ! $elevated_comment instanceof WP_Comment || ! $this->is_valid_comment($elevated_comment ) || ( ( $post->post_author === $elevated_comment->user_id ) && ! $allow_post_author ) ) {
             return '';
         }
 

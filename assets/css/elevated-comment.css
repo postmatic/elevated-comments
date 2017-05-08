@@ -1,6 +1,6 @@
 
 .postmatic-elevated {
-    width: 50%;
+    width: 45%;
     float: right;
     border: 1px solid #eee;
     margin: 0 0 10px 15px;
@@ -8,8 +8,6 @@
     -moz-border-radius: 15px;
     border-radius: 15px;
     padding: 10px;
-    background: url(../images/postmatic-elevated.png) center 50px no-repeat;
-    background-size: 90%;
 }
 .postmatic-elevated-comment {
   quotes: "\201C""\201D""\2018""\2019";
