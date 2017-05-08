@@ -3,8 +3,8 @@ Contributors: vernal, carlalexander, ronalfy
 Tags: comments, engagement, long-tail
 Donate link: http://gopostmatic.com
 Requires at least: 4.4
-Tested up to: 4.5.2
-Stable tag: 1.1.5
+Tested up to: 4.8
+Stable tag: 1.1.6
 License: GPLv2
 
 Bring the best conversation to the top of the page with Elevated Comments.
@@ -61,6 +61,12 @@ Not yet. There is only one winner. The best comment.
 3. Or, use a shortcode to place the elevated comment manually.
 
 == Changelog ==
+
+= 1.1.6 =
+* Released 2017-05-08
+* Bug Fix: Fixed divided by zero bug.
+* Tweak: Removed the default background image from the elevated comment.
+* New: Added filter to include comments by the post author, disabled them by default (elevated_allow_post_author)
 
 = 1.1.5 =
 * Released 2016-06-12
