@@ -3,8 +3,8 @@ Contributors: vernal, carlalexander, ronalfy
 Tags: comments, engagement, long-tail
 Donate link: http://gopostmatic.com
 Requires at least: 4.4
-Tested up to: 4.8
-Stable tag: 1.1.6
+Tested up to: 5.2
+Stable tag: 1.1.7
 License: GPLv2
 
 Bring the best conversation to the top of the page with Elevated Comments.
@@ -61,6 +61,10 @@ Not yet. There is only one winner. The best comment.
 3. Or, use a shortcode to place the elevated comment manually.
 
 == Changelog ==
+
+= 1.1.7 =
+* Released 2019-05-16
+* Tested and compatible with WordPress 5.2
 
 = 1.1.6 =
 * Released 2017-05-08
